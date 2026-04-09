@@ -64,7 +64,8 @@
         "nsis"
       ],
       "icon": "resources/icon.ico",
-      "publisherName": "Intesis Brasil Tecnologia"
+      "publisherName": "Intesis Brasil Tecnologia",
+      "verifyUpdateCodeSignature": false
     },
     "nsis": {
       "oneClick": false,
