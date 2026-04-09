@@ -59,7 +59,7 @@ if (!isProd) {
     console.log('ℹ️ Nenhuma atualização disponível.')
     setTimeout(() => {
       mainWindow.loadURL(isProd ? 'app://./splash' : `http://localhost:${process.argv[2]}/splash`)
-    }, 4000)
+    }, 2000)
   })
 
   autoUpdater.on('download-progress', (progressObj) => {
