@@ -1,4 +1,4 @@
-import { LucideIcon, Clock, ShieldAlert } from "lucide-react";
+import { LucideIcon, Clock, ShieldAlert, FileQuestion } from "lucide-react";
 
 interface FeedbackProps {
   color: "emerald" | "blue" | "rose" | "amber";
@@ -11,6 +11,10 @@ interface FeedbackProps {
 
 export default function FeedbackScreen({ color, title, subtitle, timeLogin, icon: Icon, message }: FeedbackProps) {
   
+  if(!Icon){
+    Icon = FileQuestion;
+  }
+
   const colorVariants = {
     emerald: { bg: "bg-emerald-500", text: "text-emerald-500", shadow: "shadow-emerald-100" },
     blue: { bg: "bg-blue-500", text: "text-blue-500", shadow: "shadow-blue-100" },

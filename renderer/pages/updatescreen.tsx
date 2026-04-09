@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { RefreshCw, Download, AlertCircle, Check } from 'lucide-react';
 import FeedbackScreen from './feedback';
-import { useRouter } from 'next/navigation';
 
 type UpdateStatus = 'checking' | 'downloading' | 'ready' | 'error';
 
@@ -11,6 +10,12 @@ export default function UpdateScreen() {
   const [version, setVersion] = useState('...');
 
   useEffect(() => {
+
+    if (!window.ipc) {
+      console.warn('window.ipc não disponível (modo dev sem Electron?)');
+      return;
+    }
+
     const unsubsStatus = window.ipc.on('update-status', (s: UpdateStatus) => setStatus(s));
     const unsubsProgress = window.ipc.on('update-progress', (p: number) => setProgress(Math.round(p)));
     const unsubsVersion = window.ipc.on('update-version', (v: string) => setVersion(v));
