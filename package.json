@@ -1,6 +1,6 @@
 {
   "name": "intesis-apontamento-desktop",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "Sistema de Apontamento Industrial - Intesis",
   "main": "app/background.js",
   "author": "Felipe De Paula",
